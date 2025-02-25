@@ -1,4 +1,4 @@
-FROM openjdk:17.0.2-slim-bullseye
+FROM openjdk:21-slim-bullseye@sha256:2abc20368f7f263a8d54dd847d750bf5eb1a82d0e4c39bf2406e3fc714122019
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends curl=7.74.0-1.3+deb11u12 locales-all=2.31-13+deb11u10 \
