@@ -4,35 +4,5 @@
     "github>shiron-dev/renovate-config",
     ":semanticCommits",
     "docker:pinDigests"
-  ],
-  "customManagers": [
-    {
-      "customType": "regex",
-      "fileMatch": [
-        "(^|/)([Dd]ocker|[Cc]ontainer)file[^/]*$"
-      ],
-      "matchStrings": [
-        "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?( extractVersion=(?<extractVersion>.*?))?\\s(ENV|ARG) .*?_VERSION=(?<currentValue>.*)\\s"
-      ],
-      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
-    }
-  ],
-  "packageRules": [
-    {
-      "separateMajorMinor": false,
-      "groupName": "kali-linux",
-      "semanticCommitType": "fix",
-      "automerge": true,
-      "matchPackageNames": [
-        "kali_rolling/**",
-        "kalilinux/kali-rolling"
-      ]
-    },
-    {
-      "matchDatasources": [
-        "docker"
-      ],
-      "semanticCommitType": "fix"
-    }
   ]
 }
