@@ -16,5 +16,4 @@ RENOVATE_BASE_BRANCHES="$RENOVATE_BASE_BRANCHES" \
  renovate \
  --platform=local \
  --dry-run=full --require-config=ignored \
- --schedule="" --onboarding=false \
-#  shiron-dev/images
+ --schedule="" --onboarding=false

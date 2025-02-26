@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCRIPT_DIR=$(cd "$(dirname $0)" || exit; pwd)
+SCRIPT_DIR=$(cd "$(dirname "$0")" || exit; pwd)
 
 DOCKERFILE="$1"
 
