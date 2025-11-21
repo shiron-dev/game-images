@@ -76,8 +76,10 @@ jobs:
         id: vars
         run: |
           echo "result=$(echo '${{ steps.read.outputs.result }}' | jq -c '.[] | [.key as $k | .value.dockerfiles[] | {key: $k, value: .}]')" >> "$GITHUB_OUTPUT"
+  # この段階で、package name, {dockerfile, platform} の組み合わせに変換したい
   docker-build:
     needs: docker-read
+    # dockerfile名からarmを判断するのはキモいので、platformからみたい
     runs-on: ${{ contains(matrix.kv.value, 'arm') && 'ubuntu-24.04-arm' || 'ubuntu-24.04' }}
     timeout-minutes: 360
     strategy:
